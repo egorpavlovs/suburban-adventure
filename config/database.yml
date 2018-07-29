@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  username: dev
+  password: dev
+  pool: 5
+  timeout: 5000
+  encoding: UTF8
+  collation: C
+  ctype: en_US.UTF-8
+  template: template0
+
+development:
+  <<: *default
+  database: suburban_adventure_development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: suburban_adventure_test
+
+production:
+  <<: *default
+  database: suburban_adventure_production
